@@ -35,3 +35,16 @@ def bubble_sort(array)
       end
       return array
 end
+
+
+# Or yet another using .each_cons(#or arguments)
+
+def bubble_sort(arr)
+   loop until arr.each_cons(2).with_index.none? do |(x, y), i|
+       if x > y
+           arr[i] = y
+           arr[i + 1] = x
+       end
+   end
+   p arr
+end
